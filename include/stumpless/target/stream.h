@@ -154,6 +154,21 @@ STUMPLESS_PUBLIC_FUNCTION
 struct stumpless_target *
 stumpless_open_stream_target( const char *name, FILE *stream );
 
+/**
+ * Sets the terminal colors used for a given severity
+ *
+ * TODO: Thread safety info
+ *
+ * @param target The target where the colors will be modified.
+ *
+ * @param severity The severity code for which colors will be modified.
+ *
+ * @param escape The escape sequence applied to the given target and severity.
+ */
+STUMPLESS_PUBLIC_FUNCTION
+struct stumpless_target *
+stumpless_set_severity_color( const struct stumpless_target *target, enum stumpless_severity severity, const char *escape );
+
 #  ifdef __cplusplus
 }                               /* extern "C" */
 #  endif
