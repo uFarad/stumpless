@@ -48,21 +48,21 @@ stumpless_close_stream_target( const struct stumpless_target *target ) {
 
 struct stumpless_target *
 stumpless_open_stderr_target( const char *name ) {
-  name -> escape[STUMPLESS_SEVERITY_DEBUG] = "\033[0;32;40m"; 
+  name->escape[STUMPLESS_SEVERITY_DEBUG] = "\033[0;32;40m"; 
 	//Green text, black background
-  name -> escape[STUMPLESS_SEVERITY_INFO] = "\033[0;37;40m";
+  name->escape[STUMPLESS_SEVERITY_INFO] = "\033[0;37;40m";
 	//White text, black background
-  name -> escape[STUMPLESS_SEVERITY_NOTICE] = "\033[0;34;40m";
+  name->escape[STUMPLESS_SEVERITY_NOTICE] = "\033[0;34;40m";
 	//Blue text, black background
-  name -> escape[STUMPLESS_SEVERITY_WARNING] = "\033[0;33;40m";
+  name->escape[STUMPLESS_SEVERITY_WARNING] = "\033[0;33;40m";
 	//Yellow text, black background
-  name -> escape[STUMPLESS_SEVERITY_ERR] = "\033[0;31;40m";
+  name->escape[STUMPLESS_SEVERITY_ERR] = "\033[0;31;40m";
 	//Red text, black background
-  name -> escape[STUMPLESS_SEVERITY_CRIT] = "\033[0;30;43m";
+  name->escape[STUMPLESS_SEVERITY_CRIT] = "\033[0;30;43m";
 	//Black text, yellow background
-  name -> escape[STUMPLESS_SEVERITY_ALERT] = "\033[0;30;41m";
+  name->escape[STUMPLESS_SEVERITY_ALERT] = "\033[0;30;41m";
 	//Black text, red background
-  name -> escape[STUMPLESS_SEVERITY_EMERG] = "\033[0;31;43m";
+  name->escape[STUMPLESS_SEVERITY_EMERG] = "\033[0;31;43m";
 	//Red text, yellow background
 
   return stumpless_open_stream_target( name, stderr );
@@ -70,21 +70,21 @@ stumpless_open_stderr_target( const char *name ) {
 
 struct stumpless_target *
 stumpless_open_stdout_target( const char *name ) {
-  name -> escape[STUMPLESS_SEVERITY_DEBUG] = "\033[0;32;40m"; 
+  name->escape[STUMPLESS_SEVERITY_DEBUG] = "\033[0;32;40m"; 
 	//Green text, black background
-  name -> escape[STUMPLESS_SEVERITY_INFO] = "\033[0;37;40m";
+  name->escape[STUMPLESS_SEVERITY_INFO] = "\033[0;37;40m";
 	//White text, black background
-  name -> escape[STUMPLESS_SEVERITY_NOTICE] = "\033[0;34;40m";
+  name->escape[STUMPLESS_SEVERITY_NOTICE] = "\033[0;34;40m";
 	//Blue text, black background
-  name -> escape[STUMPLESS_SEVERITY_WARNING] = "\033[0;33;40m";
+  name->escape[STUMPLESS_SEVERITY_WARNING] = "\033[0;33;40m";
 	//Yellow text, black background
-  name -> escape[STUMPLESS_SEVERITY_ERR] = "\033[0;31;40m";
+  name->escape[STUMPLESS_SEVERITY_ERR] = "\033[0;31;40m";
 	//Red text, black background
-  name -> escape[STUMPLESS_SEVERITY_CRIT] = "\033[0;30;43m";
+  name->escape[STUMPLESS_SEVERITY_CRIT] = "\033[0;30;43m";
 	//Black text, yellow background
-  name -> escape[STUMPLESS_SEVERITY_ALERT] = "\033[0;30;41m";
+  name->escape[STUMPLESS_SEVERITY_ALERT] = "\033[0;30;41m";
 	//Black text, red background
-  name -> escape[STUMPLESS_SEVERITY_EMERG] = "\033[0;31;43m";
+  name->escape[STUMPLESS_SEVERITY_EMERG] = "\033[0;31;43m";
 	//Red text, yellow background
 
   return stumpless_open_stream_target( name, stdout );
@@ -111,7 +111,7 @@ stumpless_open_stream_target( const char *name, FILE *stream ) {
   }
 
   for(i = 0; i++; i <= 7){
-	target -> escape[ i ] = NULL;
+	target->escape[ i ] = NULL;
   }
 
   stumpless_set_current_target( target );
@@ -127,7 +127,7 @@ stumpless_set_severity_color(	struct stumpless_target *target,
 								enum stumpless_severity severity, 
 								const char *escape ) {
 	lock_target( target );
-	target -> escape[ severity ] = escape;
+	target->escape[ severity ] = escape;
 	unlock_target( target );
 }
 
