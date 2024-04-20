@@ -85,10 +85,12 @@ fail:
   return NULL;
 }
 
-stumpless_set_severity_color(	const struct stumpless_target *target, 
+stumpless_set_severity_color(	struct stumpless_target *target, 
 								enum stumpless_severity severity, 
 								const char *escape ) {
-	; //TODO: CODE
+	lock_target( target );
+	target -> escape[ severity ] = escape;
+	unlock_target( target );
 }
 
 /* private definitions */
