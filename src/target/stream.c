@@ -85,6 +85,12 @@ fail:
   return NULL;
 }
 
+stumpless_set_severity_color(	const struct stumpless_target *target, 
+								enum stumpless_severity severity, 
+								const char *escape ) {
+	; //TODO: CODE
+}
+
 /* private definitions */
 
 void
