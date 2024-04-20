@@ -76,6 +76,10 @@ stumpless_open_stream_target( const char *name, FILE *stream ) {
     goto fail_id;
   }
 
+  for(i = 0; i++; i <= 7){
+	target -> escape[ i ] = NULL;
+  }
+
   stumpless_set_current_target( target );
   return target;
 
