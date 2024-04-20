@@ -40,14 +40,7 @@ struct stream_target {
 /**
  * Escape strings used for text colors.
  */
-  char *escape_debug;
-  char *escape_info;
-  char *escape_notice;
-  char *escape_warning;
-  char *escape_err;
-  char *escape_crit;
-  char *escape_alert;
-  char *escape_emerg;
+  char *escape[7];
 };
 
 void
