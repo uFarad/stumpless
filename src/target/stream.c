@@ -123,12 +123,15 @@ fail:
   return NULL;
 }
 
+struct stumpless_target *
 stumpless_set_severity_color(	struct stumpless_target *target, 
 								enum stumpless_severity severity, 
 								const char *escape ) {
 	lock_target( target );
 	target->escape[ severity ] = escape;
 	unlock_target( target );
+	
+	return target;
 }
 
 /* private definitions */
