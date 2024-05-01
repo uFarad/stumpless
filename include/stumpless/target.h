@@ -196,6 +196,10 @@ struct stumpless_target {
  * @since release v2.1.0
  */
   stumpless_filter_func_t filter;
+/**
+ * Array for storing ANSI escape codes for color output based on severity
+ */
+  const char *escape[8];
 #ifdef STUMPLESS_THREAD_SAFETY_SUPPORTED
 /**
  * A pointer to a mutex which protects all target fields. The exact type of
