@@ -112,7 +112,7 @@ fail:
 }
 
 struct stumpless_target *
-stumpless_set_severity_color(	struct stumpless_target *target, 
+stumpless_set_severity_color(	const struct stumpless_target *target, 
 								enum stumpless_severity severity, 
 								const char *escape ) {
 	lock_target( target );
