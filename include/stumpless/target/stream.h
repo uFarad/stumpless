@@ -167,7 +167,7 @@ stumpless_open_stream_target( const char *name, FILE *stream );
  */
 STUMPLESS_PUBLIC_FUNCTION
 struct stumpless_target *
-stumpless_set_severity_color( const struct stumpless_target *target, enum stumpless_severity severity, char *escape );
+stumpless_set_severity_color( struct stumpless_target *target, enum stumpless_severity severity, char *escape );
 
 #  ifdef __cplusplus
 }                               /* extern "C" */
